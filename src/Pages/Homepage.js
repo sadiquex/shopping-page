@@ -43,13 +43,20 @@ function Homepage() {
           $(
             Card,
             { className: "card-1" },
-            $(CardPicture, null, "picture"),
+            $(
+              CardPicture,
+              null,
+              $(CardPictureImage, {
+                src: "https://imgs.search.brave.com/f72UzmMLnpkERU0b-w0gwC1Tgs5kAGAS_XtZHDe0-Uo/rs:fit:1200:1200:1/g:ce/aHR0cDovL3d3dy5m/cmVlcG5naW1nLmNv/bS9kb3dubG9hZC9j/aGVycnkvMTgtY2hl/cnJ5LXBuZy1pbWFn/ZS5wbmc",
+                alt: "Cherry",
+              })
+            ),
             $(
               CardText,
               null,
               $(CardTextName, null, "Card text name"),
               $(CardTextPrice, null, "Price"),
-              $(CardTextButton, null, "Add to Card")
+              $(CardTextButton, null, $(PTagInside, null, "afsgd"))
             )
           )
         )
@@ -167,33 +174,50 @@ const Card = styled.div`
 `;
 
 const CardPicture = styled.div`
-  /* width: 100%; */
-  /* height: 150px; */
+  /* width: 50%; */
+  height: 50%;
   padding: 20px 0;
-  background: red;
+  background: pink;
+  z-index: 100;
+  position: relative;
 `;
 
-const CardText = styled.p`
+const CardPictureImage = styled.img`
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 80px;
+  border: 2px solid red;
+`;
+
+const CardText = styled.div`
   /* display: flex; */
   /* flex-direction: column; */
   border: 2px solid green;
   text-align: center;
 `;
-const CardTextName = styled.p`
+const CardTextName = styled.div`
   background: brown;
 `;
 
-const CardTextPrice = styled.p`
+const CardTextPrice = styled.div`
   background: blue;
 `;
 
-const CardTextButton = styled.p`
+const CardTextButton = styled.a`
   background: red;
   color: #fff;
   text-align: center;
-  display: flex;
+  display: inline-block;
   align-self: center;
-  /* padding: 20px auto; */
+  /* padding: 0px 24px; */
+  /* border-radius: 8px; */
+`;
+
+const PTagInside = styled.p`
+  color: green;
 `;
 
 export default Homepage;
