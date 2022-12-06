@@ -49,14 +49,75 @@ function Homepage() {
               $(CardPictureImage, {
                 src: "https://imgs.search.brave.com/f72UzmMLnpkERU0b-w0gwC1Tgs5kAGAS_XtZHDe0-Uo/rs:fit:1200:1200:1/g:ce/aHR0cDovL3d3dy5m/cmVlcG5naW1nLmNv/bS9kb3dubG9hZC9j/aGVycnkvMTgtY2hl/cnJ5LXBuZy1pbWFn/ZS5wbmc",
                 alt: "Cherry",
-              })
+              }),
+              $(FavouriteIcon, { className: "fa-solid fa-heart" })
             ),
             $(
               CardText,
               null,
-              $(CardTextName, null, "Card text name"),
-              $(CardTextPrice, null, "Price"),
-              $(CardTextButton, null, $(PTagInside, null, "afsgd"))
+              $(CardTextName, null, "Cherry Fruit"),
+              $(CardTextPrice, null, "$6.00/kg"),
+              $(CardTextButton, null, "Add to Card")
+            )
+          ),
+          $(
+            Card,
+            { className: "card-1" },
+            $(
+              CardPicture,
+              null,
+              $(CardPictureImage, {
+                alt: "Cherry",
+                src: "https://imgs.search.brave.com/2AHJ3frlH_62ctKfhwHgHwUkDCX85YqBkKzpw9GsYM8/rs:fit:1200:1200:1/g:ce/aHR0cHM6Ly9wdXJl/cG5nLmNvbS9wdWJs/aWMvdXBsb2Fkcy9s/YXJnZS9wdXJlcG5n/LmNvbS1tYW5kYXJp/bm1hbmRhcmlub3Jh/bmdlY2l0cnVzLXJl/c2huaW1hbmRhcmlu/c2Zvb2QtMTcwMTUy/NzMzMTgxMXh4eHJp/LnBuZw",
+              }),
+              $(FavouriteIcon, { className: "fa-solid fa-heart" })
+            ),
+            $(
+              CardText,
+              null,
+              $(CardTextName, null, "Tangerine Fruit"),
+              $(CardTextPrice, null, "$8.00/kg"),
+              $(CardTextButton, null, "Add to Card")
+            )
+          ),
+          $(
+            Card,
+            { className: "card-1" },
+            $(
+              CardPicture,
+              null,
+              $(CardPictureImage, {
+                alt: "Cherry",
+                src: "https://imgs.search.brave.com/VkC1UkpXybaHCIXSMLuWGuUC3Jgyq9fu_dGILVc_KmQ/rs:fit:1200:1200:1/g:ce/aHR0cHM6Ly9wdXJl/cG5nLmNvbS9wdWJs/aWMvdXBsb2Fkcy9s/YXJnZS9wdXJlcG5n/LmNvbS1ncmFwZXNn/cmFwZWJlcnJ5ZnJ1/aXR3aW5lLTMzMTUy/MjQxNDkxNGxyenZm/LnBuZw",
+              }),
+              $(FavouriteIcon, { className: "fa-solid fa-heart" })
+            ),
+            $(
+              CardText,
+              null,
+              $(CardTextName, null, "Grape Fruit"),
+              $(CardTextPrice, null, "$6.10/kg"),
+              $(CardTextButton, null, "Add to Card")
+            )
+          ),
+          $(
+            Card,
+            { className: "card-1" },
+            $(
+              CardPicture,
+              null,
+              $(CardPictureImage, {
+                alt: "Cherry",
+                src: "https://imgs.search.brave.com/kM90b4B9UhMS22IEnltEjVgTUijP-KN8J7ER2uqeYPM/rs:fit:1094:900:1/g:ce/aHR0cDovL3d3dy5m/cmVlcG5naW1nLmNv/bS9kb3dubG9hZC9h/dm9jYWRvLzctMi1h/dm9jYWRvLXRyYW5z/cGFyZW50LnBuZw",
+              }),
+              $(FavouriteIcon, { className: "fa-solid fa-heart" })
+            ),
+            $(
+              CardText,
+              null,
+              $(CardTextName, null, "Avocado Fruit"),
+              $(CardTextPrice, null, "$6.90/kg"),
+              $(CardTextButton, null, "Add to Card")
             )
           )
         )
@@ -92,7 +153,7 @@ const Top = styled.div`
 `;
 
 const MenuItems = styled.div`
-  border: 2px solid red;
+  /* border: 2px solid red; */
   width: 100%;
   display: flex;
   align-items: center;
@@ -109,42 +170,51 @@ const ProfileIcon = styled.i`
 `;
 
 const Welcome = styled.p`
-  border: 2px solid red;
+  /* border: 2px solid red; */
 `;
 
 const SearchArea = styled.div`
-  border: 2px solid red;
+  /* border: 2px solid red; */
+  position: relative;
   display: flex;
   align-items: center;
 `;
 
 const InputBox = styled.input`
   font-family: inherit;
+  background: #eee;
+  border: none;
   padding: 10px;
+  text-align: center;
 `;
 
 const SearchIcon = styled.i`
   font-size: 20px;
+  position: absolute;
+  left: 10px;
 `;
 
 const Categories = styled.div`
   display: flex;
-  justify-content: space-between;
-  gap: 20px;
+  /* justify-content: space-between; */
+  gap: 30px;
+  display: flex;
+  flex-wrap: nowrap;
   overflow-x: scroll;
   ::-webkit-scrollbar {
     width: 20px;
     background-color: #d6dee1;
   }
-  text-wrap: nowrap;
 
   /* flex-direction: column; */
 `;
 
-const CategoryItem = styled.p`
-  color: pink;
+const CategoryItem = styled.a`
+  /* color: pink; */
   cursor: pointer;
-  border: 2px solid red;
+  /* border: 2px solid red; */
+  font-size: 14px;
+  white-space: nowrap;
 
   /* text-wrap: nowrap; */
 `;
@@ -155,7 +225,7 @@ const Cards = styled.div`
   justify-content: space-evenly;
   flex-wrap: wrap;
   gap: 10px;
-  border: 2px solid red;
+  /* border: 2px solid red; */
 `;
 
 const Card = styled.div`
@@ -164,9 +234,7 @@ const Card = styled.div`
   border-radius: 8px;
   background: #eee;
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.6);
-  /* position: relative; */
   overflow: hidden;
-  /* overflow: scroll; */
   display: flex;
   flex-direction: column;
   background: #fff;
@@ -175,49 +243,49 @@ const Card = styled.div`
 
 const CardPicture = styled.div`
   /* width: 50%; */
-  height: 50%;
+  height: 45%;
   padding: 20px 0;
   background: pink;
   z-index: 100;
   position: relative;
 `;
 
+const FavouriteIcon = styled.i`
+  position: absolute;
+  right: 10px;
+  top: 5px;
+  background: #fff;
+  padding: 8px;
+  border-radius: 50%;
+`;
+
 const CardPictureImage = styled.img`
   position: absolute;
-  top: 30%;
+  /* top: 30%; */
   left: 50%;
   transform: translateX(-50%);
   width: 80px;
   height: 80px;
-  border: 2px solid red;
 `;
 
 const CardText = styled.div`
-  /* display: flex; */
-  /* flex-direction: column; */
-  border: 2px solid green;
   text-align: center;
+  padding: 2px;
 `;
 const CardTextName = styled.div`
-  background: brown;
+  font-weight: 600;
 `;
 
 const CardTextPrice = styled.div`
-  background: blue;
+  font-size: 80%;
 `;
 
-const CardTextButton = styled.a`
-  background: red;
+const CardTextButton = styled.button`
+  background: #d01118;
+  font-weight: 500;
   color: #fff;
-  text-align: center;
-  display: inline-block;
-  align-self: center;
-  /* padding: 0px 24px; */
-  /* border-radius: 8px; */
-`;
-
-const PTagInside = styled.p`
-  color: green;
+  padding: 8px 15px;
+  border: none;
 `;
 
 export default Homepage;
