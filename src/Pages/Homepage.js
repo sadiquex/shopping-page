@@ -26,7 +26,8 @@ function Homepage() {
           SearchArea,
           null,
           $(InputBox, { placeholder: "Search" }),
-          $(SearchIcon, { className: "fa fa-search" })
+          $(SearchIcon, { className: "fa fa-search" }),
+          $(FilterIcon, { className: "fa-solid fa-filter" })
         ),
         $(
           Categories,
@@ -192,6 +193,19 @@ const SearchIcon = styled.i`
   font-size: 20px;
   position: absolute;
   left: 10px;
+`;
+
+const FilterIcon = styled.i`
+  background: red;
+  padding: 8px;
+  border-radius: 50%;
+  color: #fff;
+  position: absolute;
+  right: 20px;
+
+  &:hover {
+    /* transform: scale(2); */
+  }
 `;
 
 const Categories = styled.div`
